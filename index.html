@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino Royal - Compact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top-bar">
+        <div class="user-info"><span class="vip-tag"></span> Bố Là Hiếu</div>
+        <div class="wallet-info">💰 <span id="balance">1,000,000</span> <button class="plus-btn" onclick="recharge()">+</button></div>
+    </header>
+
+<div class="main-content">
+    <div class="betting-board">
+        <div class="betting-zone">
+            <div id="sideTai" class="gate tai" onclick="selectSide('tai', event)">
+    <span class="gate-title">TÀI</span>
+            </div>
+
+            <div class="plate-area">
+                <div class="plate" id="mainPlate">
+                    <div class="dice-triangle">
+                        <div class="dice" id="d1"></div>
+                        <div class="dice-row">
+                            <div class="dice" id="d2"></div>
+                            <div class="dice" id="d3"></div>
+                        </div>
+                    </div>
+                    <div class="lid" id="lid">
+                        <div id="timer">25</div>
+                        <span class="nan-text">NẶN BÁT</span>
+                    </div>
+                </div>
+            </div>
+<div id="sideXiu" class="gate xiu" onclick="selectSide('xiu', event)">
+    <span class="gate-title">XỈU</span>
+            </div>
+        </div>
+
+        <div class="bet-summary">
+            <small id="betSideLabel">CHỌN CỬA ĐỂ CƯỢC</small>
+            <div id="betValue">0</div>
+        </div>
+
+        <div class="chip-rack">
+            <button class="chip" data-val="10000" style="background:#1abc9c">10K</button>
+            <button class="chip" data-val="50000" style="background:#3498db">50K</button>
+            <button class="chip" data-val="100000" style="background:#9b59b6">100K</button>
+            <button class="chip" data-val="500000" style="background:#e67e22">500K</button>
+        </div>
+
+        <div class="actions">
+            <button class="btn btn-allin" onclick="betAll()">ALL IN</button>
+            <button class="btn btn-confirm" onclick="confirmBet()">XÁC NHẬN CƯỢC</button>
+            <button class="btn btn-cancel" onclick="clearBet()">HỦY CƯỢC</button>
+        </div>
+    </div>
+</div>
+    <div id="notifyPopup" class="overlay flex-center">
+        <div class="popup"><h3 id="popTitle"></h3><p id="popMsg"></p><button onclick="closeNotify()">OK</button></div>
+    </div>
+
+    <div id="resultOverlay" class="overlay flex-center">
+        <div class="res-box"><h1 id="resStatus"></h1><h2 id="resMoney"></h2></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
